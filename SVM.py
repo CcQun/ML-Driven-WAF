@@ -33,7 +33,7 @@ class WAF(object):
         # 使用 train_test_split 分割 X y 列表
         # X_train矩阵的数目对应 y_train列表的数目(一一对应)  -->> 用来训练模型
         # X_test矩阵的数目对应 	 (一一对应) -->> 用来测试模型的准确性
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.95, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.90, random_state=42)
 
         self.clf = svm.SVC(kernel='rbf', C=1E6, gamma='auto')
         self.clf.fit(X_train, y_train)
